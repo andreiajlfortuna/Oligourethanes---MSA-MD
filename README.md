@@ -22,7 +22,7 @@ for i in {1..200}; do
 done
 ```
 
----
+
 
 ### 2. Concatenate Trajectories
 
@@ -32,7 +32,7 @@ Combine all trajectory files into a single dataset:
 mpirun -np 1 gmx_mpi trjcat -f */md.xtc -o concatenated_trajectories/all_md.xtc -cat
 ```
 
----
+
 
 ### 3. Center the Trajectory
 
@@ -47,7 +47,7 @@ mpirun -np 1 gmx_mpi trjconv \
   -o centered_${name}.xtc <<< $'2\n2'
 ```
 
----
+
 
 ### 4. Create Index File
 
@@ -65,7 +65,7 @@ name 4 HA
 q
 ```
 
----
+
 
 ### 5. Clustering (GROMOS Method)
 
@@ -81,7 +81,7 @@ bash cluster.sh
 * Total sample size: **100,000 snapshots**
 * Time interval: **20 ps**
 
----
+
 
 ### Output
 
@@ -97,7 +97,6 @@ The clustering procedure generates:
   * Each file represents one cluster
   * Includes structures belonging to that cluster
 
----
 
 ###   Notes
 
