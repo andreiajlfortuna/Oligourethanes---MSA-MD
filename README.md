@@ -33,25 +33,6 @@ mpirun -np 1 gmx_mpi trjcat -f */md.xtc -o concatenated_trajectories/all_md.xtc 
 ```
 
 
-
-### Create Index File
-
-Exclude hydrogen atoms from RMSD calculations:
-
-```bash
-mpirun -np 1 gmx_mpi make_ndx -f md.tpr -o index.ndx
-```
-
-Inside the interactive prompt:
-
-```
-r UNK & ! a H*
-name 4 HA
-q
-```
-
-
-
 ### Clustering (GROMOS Method)
 
 Run the clustering script:
