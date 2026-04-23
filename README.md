@@ -34,7 +34,7 @@ mpirun -np 1 gmx_mpi trjcat -f */md.xtc -o concatenated_trajectories/all_md.xtc 
 
 ### Create index
 
-- Create entry with: 
+*Create entry with:* 
 * Backbone atoms
 * All atoms from urethane groups
 * First C atom from the side chains 
