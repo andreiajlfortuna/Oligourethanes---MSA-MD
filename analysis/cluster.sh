@@ -1,4 +1,22 @@
 #!/bin/bash
+
+# ============================================================
+#  GROMACS Clustering SLURM Script
+# ============================================================
+#
+#  Description:
+#  This script performs RMSD-based clustering using GROMACS on a SLURM-managed
+#  HPC system. It creates a temporary scratch workspace, runs clustering on a
+#  concatenated trajectory, and copies results back to the submission directory.
+#  Adapted for use on systems with node-local or shared scratch storage (e.g., PSNC).
+#
+#  Original Author:
+#  Maksymilian Szatko
+#
+#  Modifications:
+#  April 2026 – Modified by Andreia Fortuna
+
+
 #SBATCH --job-name=gmx_cluster
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
