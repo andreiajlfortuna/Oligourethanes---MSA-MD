@@ -43,7 +43,7 @@ printf "HA\nUNK\n" | gmx_mpi cluster \
     -clid "clusters-id_0.2.xvg" \
     -cl "clusters_0.2.pdb" \
     -wcl 100 \
-    -cutoff 0.2 \
+    -cutoff 0.16 \
     -dt 20
 
 
