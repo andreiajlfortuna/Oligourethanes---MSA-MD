@@ -12,7 +12,7 @@ This section describes how to process trajectories and perform clustering analys
 
 ---
 
-### 1. Convert `.trr` to `.xtc`
+### Convert `.trr` to `.xtc`
 
 Extract compressed trajectory files from simulation outputs:
 
@@ -24,7 +24,7 @@ done
 
 
 
-### 2. Concatenate Trajectories
+### Concatenate Trajectories
 
 Combine all trajectory files into a single dataset:
 
@@ -34,22 +34,7 @@ mpirun -np 1 gmx_mpi trjcat -f */md.xtc -o concatenated_trajectories/all_md.xtc 
 
 
 
-### 3. Center the Trajectory
-
-Remove periodic boundary effects and center the molecule:
-
-```bash
-mpirun -np 1 gmx_mpi trjconv \
-  -f all_md.xtc \
-  -s md.tpr \
-  -pbc mol \
-  -center \
-  -o centered_${name}.xtc <<< $'2\n2'
-```
-
-
-
-### 4. Create Index File
+### Create Index File
 
 Exclude hydrogen atoms from RMSD calculations:
 
@@ -67,7 +52,7 @@ q
 
 
 
-### 5. Clustering (GROMOS Method)
+### Clustering (GROMOS Method)
 
 Run the clustering script:
 
@@ -80,6 +65,7 @@ bash cluster.sh
 * Every **10th frame** is used for clustering
 * Total sample size: **100,000 snapshots**
 * Time interval: **20 ps**
+* cut-off: 0.16 nm
 
 
 
